@@ -30,7 +30,7 @@ def extract_info(username_line, password_line):
 
 def print_data_ls():
     thisdir = os.getcwd()
-    os.listdir(thisdir)
+    print (os.listdir(thisdir))
 
 def wrapStringInHTMLWindows(username, password):
     if not username:
