@@ -26,11 +26,8 @@ def extract_info(username_line, password_line):
     if password_line:
         password = password_line.split('Password : ')[1]
 
+    print username, password
     return username, password
-
-# def print_data_ls():
-#     thisdir = '/var/lib/jenkins/workspace/Vecino/Data/log.txt'
-#     print (os.listdir(thisdir))
 
 def wrapStringInHTMLWindows(username, password):
     if not username:
@@ -80,7 +77,6 @@ def wrapStringInHTMLWindows(username, password):
     open_new_tab(filename)
 
 def execute_vecino_process():
-    # print_data_ls()
     username_line, password_line = get_info()
     username, password = extract_info(username_line, password_line)
     wrapStringInHTMLWindows(username, password)
