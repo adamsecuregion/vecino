@@ -1,0 +1,4 @@
+POSSIBLE_USERNAMES = ['UserName']
+POSSIBLE_PASSWORDS = ['Password']
+
+TEXTFILE_PATH = 'log.txt'
