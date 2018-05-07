@@ -1,6 +1,6 @@
 from conf import POSSIBLE_USERNAMES, POSSIBLE_PASSWORDS, TEXTFILE_PATH
 from webbrowser import open_new_tab
-
+import os
 
 def get_info():
     in_file = open(TEXTFILE_PATH, "rt")
@@ -27,6 +27,10 @@ def extract_info(username_line, password_line):
         password = password_line.split('Password : ')[1]
 
     return username, password
+
+def print_data_ls():
+    thisdir = os.getcwd()
+    os.listdir(thisdir)
 
 def wrapStringInHTMLWindows(username, password):
     if not username:
@@ -76,11 +80,13 @@ def wrapStringInHTMLWindows(username, password):
     open_new_tab(filename)
 
 def execute_vecino_process():
+    # print_data_ls()
     username_line, password_line = get_info()
     username, password = extract_info(username_line, password_line)
     wrapStringInHTMLWindows(username, password)
 
 
 if __name__ == '__main__':
+
     execute_vecino_process()
 
