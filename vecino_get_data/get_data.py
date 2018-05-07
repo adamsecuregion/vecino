@@ -80,10 +80,10 @@ def wrapStringInHTMLWindows(username, password):
     open_new_tab(filename)
 
 def execute_vecino_process():
-    # print_data_ls()
-    username_line, password_line = get_info()
-    username, password = extract_info(username_line, password_line)
-    wrapStringInHTMLWindows(username, password)
+    print_data_ls()
+    # username_line, password_line = get_info()
+    # username, password = extract_info(username_line, password_line)
+    # wrapStringInHTMLWindows(username, password)
 
 
 if __name__ == '__main__':
