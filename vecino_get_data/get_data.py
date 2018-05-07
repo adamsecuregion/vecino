@@ -26,7 +26,7 @@ def extract_info(username_line, password_line):
     if password_line:
         password = password_line.split('Password : ')[1]
 
-    print username, password
+    print {'username': username, ', password': password}
     return username, password
 
 def wrapStringInHTMLWindows(username, password):
