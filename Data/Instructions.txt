@@ -1,0 +1,18 @@
+Goals & Instructions
+
+
+Our project focus on 'auto-receive' credentials of each user in our Lan.
+We have to receive 3 parameters:
+1-url/login page
+2-Username
+3-Password
+
+As you can see in the file "log.txt" (example of MITM in Tapuz site):
+
+line for url/login page:
+[ADAM/172.16.0.102] POST https://www.tapuz.co.il/Common/SignInPage.aspx?backUrl=http%3a%2f%2fwww.tapuz.co.il%2fCommon%2fSignIn.aspx%40loginDone%3d1 ( text/html ) [200]
+
+
+lines for username and password:
+  TapuzLogin1%24ctl01%24UserName : adam
+  TapuzLogin1%24ctl01%24Password : 123456789poc
