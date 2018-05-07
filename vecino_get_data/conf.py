@@ -1,3 +1,3 @@
 POSSIBLE_USERNAMES = ['UserName']
 POSSIBLE_PASSWORDS = ['Password']
-TEXTFILE_PATH = 'C:\\Users\\Admin\\PycharmProjects\\vecino1\\Data\\log.txt'
+TEXTFILE_PATH = '/var/lib/jenkins/workspace/Vecino/Data/log.txt'
