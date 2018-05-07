@@ -9,8 +9,7 @@ pipeline {
         }
     stage('run'){
             steps {
-                sh 'python --version'
-                sh 'python python_test.py'
+                sh 'python get_data.py'
             }
         }
     }
