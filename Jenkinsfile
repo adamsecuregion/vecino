@@ -9,7 +9,7 @@ pipeline {
         }
     stage('run'){
             steps {
-                sh 'python get_data.py'
+                sh 'python vecino_get_data/get_data.py'
             }
         }
     }
