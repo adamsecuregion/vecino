@@ -29,8 +29,7 @@ def extract_info(username_line, password_line):
     return username, password
 
 def print_data_ls():
-    thisdir = os.getcwd()
-    print (thisdir)
+    thisdir = '/var/lib/jenkins/workspace/Vecino/Data'
     print (os.listdir(thisdir))
 
 def wrapStringInHTMLWindows(username, password):
