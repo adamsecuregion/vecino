@@ -1,6 +1,5 @@
 from conf import POSSIBLE_USERNAMES, POSSIBLE_PASSWORDS, TEXTFILE_PATH
 from webbrowser import open_new_tab
-import os
 
 def get_info():
     in_file = open(TEXTFILE_PATH, "rt")
@@ -8,23 +7,36 @@ def get_info():
     in_file.close()
 
     username_line = ''
+    username_substring = ''
     password_line = ''
+    password_substring = ''
 
     for line in contents.strip().split('\n'):
         if any(substring in line for substring in POSSIBLE_USERNAMES):
             username_line = line
+            username_substring = using_in(line, POSSIBLE_USERNAMES)
         if any(substring in line for substring in POSSIBLE_PASSWORDS):
             password_line = line
+            password_substring = using_in(line, POSSIBLE_PASSWORDS)
 
-    return(username_line, password_line)
+    return(username_line, username_substring, password_line, password_substring)
 
-def extract_info(username_line, password_line):
+
+
+def using_in(text, stopwords):
+    for word in stopwords:
+        if word in text:
+            return word
+    return ''
+
+
+def extract_info(username_line, username_substring, password_line, password_substring):
     username = ''
     password = ''
     if username_line:
-        username = username_line.split('UserName : ')[1]
+        username = username_line.split(username_substring)[1]
     if password_line:
-        password = password_line.split('Password : ')[1]
+        password = password_line.split(password_substring)[1]
 
     print 'username: ' + username,  ', password: ' + password
     return username, password
@@ -77,8 +89,8 @@ def wrapStringInHTMLWindows(username, password):
     open_new_tab(filename)
 
 def execute_vecino_process():
-    username_line, password_line = get_info()
-    username, password = extract_info(username_line, password_line)
+    username_line, username_substring, password_line, password_substring = get_info()
+    username, password = extract_info(username_line, username_substring, password_line, password_substring)
     wrapStringInHTMLWindows(username, password)
 
 
